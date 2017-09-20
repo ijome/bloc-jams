@@ -7,7 +7,7 @@ body.landing {
   min-height: 600px; /* hero content must be _at least_ 600 pixels */
   background-image: url(../assets/images/bloc_jams_bg.jpg);
   background-repeat: no-repeat;
-  background position: center center;
+  background-position: center center;
   background-size: cover;
 }
 
