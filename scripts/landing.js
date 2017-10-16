@@ -1,6 +1,6 @@
-var animatePoints = function () {
+var points = document.getElementsByClassName('point');
 
-  var points = document.getElementsByClassName('point');
+var animatePoints = function (points) {
 
   var revealPoints = function() {
       for (var i = 0; i < points.length; i++) {
@@ -13,3 +13,9 @@ var animatePoints = function () {
 
   revealPoints();
 };
+
+window.onload = function() {
+  window.addEventListener('scroll', function(event) {
+    console.log(event);
+  });
+}
