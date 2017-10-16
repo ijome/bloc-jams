@@ -15,6 +15,10 @@ var animatePoints = function (points) {
 };
 
 window.onload = function() {
+//automatically call animatePoints if the window is taller than 950px
+  if (window.innerHeight > 950) {
+    animatePoints(points);
+  }
 
 var sellingPoints = document.getElementsByClassName('selling-points')[0];
 var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200
