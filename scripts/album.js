@@ -78,6 +78,10 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function(event) {
   setCurrentAlbum(albumPicasso);
-  
-  albumImage.addEventListener('click', function(event));
+
+  var albums = [albumPicasso, albumMarconi, albumCaine];
+
+  albumImage.addEventListener('click', function(event) {
+    setCurrentAlbum(album);
+  });
 };
