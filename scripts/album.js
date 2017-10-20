@@ -29,6 +29,21 @@ var albumMacaroni = {
   ]
 };
 
+var albumCaine = {
+  title: 'Darkest Before Dawn: The Prelude',
+  artist: 'King Push',
+  label: 'Good Music',
+  year: '2015',
+  albumArtUrl: 'https://i.scdn.co/image/6318de5a856a793163e217f23e6168450c57211d',
+  songs: [
+    { title: 'BLOW', duration: '2:18' },
+    { title: 'DDA', duration: '4:01' },
+    { title: 'H.G.T.V', duration: '2:08' },
+    { title: 'Sunshine (feat. Jill Scott)', duration: '4:21' },
+    { title: 'Crutches, Crosses, Caskets', duration: '3:03' }
+  ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
   var template =
     '<tr class="album-view-song-item">'
@@ -59,6 +74,10 @@ var setCurrentAlbum = function(album) {
     albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
   }
 };
+
+var setNextAlbum = function(callback) {
+
+}
 
 window.onload = function() {
   setCurrentAlbum(albumPicasso);
