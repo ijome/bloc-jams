@@ -14,7 +14,7 @@ var albumPicasso = {
   ]
 };
 // Another Example Album
-var albumMacroni = {
+var albumMarconi = {
   title: 'The Telephone',
   artist: 'Guglielmo Macaroni',
   label: 'EM',
@@ -76,12 +76,16 @@ var setCurrentAlbum = function(album) {
   }
 };
 
-window.onload = function(event) {
+window.onload = function() {
   setCurrentAlbum(albumPicasso);
 
   var albums = [albumPicasso, albumMarconi, albumCaine];
-
-  albumImage.addEventListener('click', function(event) {
-    setCurrentAlbum(album);
+  var index = 1;
+  albumImage.addEventListener("click", function(event) {
+    setCurrentAlbum(albums[index]);
+    index++;
+    if (index == albums.length) {
+      index = 0;
+    }
   });
 };
