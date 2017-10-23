@@ -85,7 +85,9 @@ window.onload = function() {
   setCurrentAlbum(albumPicasso);
 
   songListContainer.addEventListener('mouseover', function(event) {
-    console.log(event.target);
+    if (event.target.parentElement.className === 'album-view-song-item') {
+      //change the content from the number to the play button's HTML
+    }
   });
 
   var albums = [albumPicasso, albumMarconi, albumCaine];
