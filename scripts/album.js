@@ -47,7 +47,7 @@ var albumCaine = {
 var createSongRow = function(songNumber, songName, songLength) {
   var template =
     '<tr class="album-view-song-item">'
-  + '  <td class="song-item-number data-song-number="' + songNumber + '">' + songNumber + '</td>'
+  + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
   + '  <td class="song-album-title">' + songName + '</td>'
   + '  <td class="song-item-duration">' + songLength + '</td>'
   + '</tr>'
@@ -92,8 +92,8 @@ window.onload = function() {
   });
 //change play button back to song-item-number on mouseleave
   for (var i = 0; i < songRows.length; i++) {
-    songRows[i].addEventListener('mouseleave', fuction(event) {
-      //revert the content back to a number
+    songRows[i].addEventListener('mouseleave', function(event) {
+      this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
     });
   }
 
