@@ -43,7 +43,7 @@ var albumCaine = {
     { title: 'Crutches, Crosses, Caskets', duration: '3:03' }
   ]
 };
-
+//Table template for album song line items (eg. songNumber, songName, songLength)
 var createSongRow = function(songNumber, songName, songLength) {
   var template =
     '<tr class="album-view-song-item">'
@@ -75,7 +75,7 @@ var setCurrentAlbum = function(album) {
     albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
   }
 };
-// Finds and element w/ a specific classname, then returns the partent element
+// Finds and element w/ a specific classname, then returns the parent element
 var findParentByClassName = function(element, targetClass) {
   if (element) {
     var currentParent = element.parentElement;
@@ -85,6 +85,24 @@ var findParentByClassName = function(element, targetClass) {
     return currentParent;
   }
 };
+//Accepts an element and returns that element w/ .song-item-number class
+var getSongItem = function(element) {
+  switch(element.className) {
+    case 'album-song-buton':
+    case 'ion-play':
+    case 'ion-pause':
+      return findParentByClassName(element, 'song-item-number');
+    case 'album-view-song-item':
+      return element.querySelector('.song-item-number');
+    case 'song-item-title':
+    case 'song-iterm duration':
+      return findParentByClassName(element, 'album-view-song-item').querySelector('.song-item-number')
+    case 'song-item-number':
+      return element;
+    default:
+      return;
+  }
+}
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 var songRows = document.getElementsByClassName('album-view-song-item');
