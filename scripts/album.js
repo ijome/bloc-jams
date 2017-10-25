@@ -55,13 +55,13 @@ var createSongRow = function(songNumber, songName, songLength) {
 
   return template;
 };
-
+// capture variables
 var albumTitle = document.getElementsByClassName('album-view-title')[0];
 var albumArtist = document.getElementsByClassName('album-view-artist')[0];
 var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
 var albumImage = document.getElementsByClassName('album-cover-art')[0];
 var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
-
+// when called, sets current album view and with all of the relevant elements: album title, artist, release year, label, album art, and song list
 var setCurrentAlbum = function(album) {
 
   albumTitle.firstChild.nodeValue = album.title;
@@ -73,6 +73,16 @@ var setCurrentAlbum = function(album) {
 
   for (var i = 0; i < album.songs.length; i++) {
     albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+  }
+};
+// Finds and element w/ a specific classname, then returns the partent element
+var findParentByClassName = function(element, targetClass) {
+  if (element) {
+    var currentParent = element.parentElement;
+    while (currentParent.className !== targetClass && currentParent.className !== null) {
+      currentParent = currentParent.parentElement;
+    }
+    return currentParent;
   }
 };
 

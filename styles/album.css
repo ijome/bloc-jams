@@ -63,7 +63,7 @@ body.album {
   border-radius: 50% 50%;
   display: inline-block;
   width: 28px;
-  heigth: 28px;
+  height: 28px;
 }
 
 .album-song-button:hover {
@@ -73,7 +73,7 @@ body.album {
 }
 
 .album-song-button span {
-  line-heigh: 28px;
+  line-height: 28px;
 }
 
 /* #2 */
