@@ -109,6 +109,10 @@ var songRows = document.getElementsByClassName('album-view-song-item');
 
 //Album Button templates
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
+var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
+
+//Store state of playing songs
+var currentlyPlayingSong = null;
 
 window.onload = function() {
   setCurrentAlbum(albumPicasso);
