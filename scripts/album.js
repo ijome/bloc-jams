@@ -112,18 +112,18 @@ var clickHandler = function (targetElement) {
   if (currentlyPlayingSong === null) {
     songItem.innerHTML = pauseButtonTemplate;
     currentlyPlayingSong = songItem.getAttribute('data-song-number');
-  } else if (currentlyPlaying === songItem.getAttribute('data-song-number')) {
+  } else if (currentlyPlayingSong === songItem.getAttribute('data-song-number')) {
     songItem.innerHTML = playButtonTemplate;
     currentlyPlayingSong = null;
   } else if (currentlyPlayingSong !== songItem.getAttribute('data-song-number')) {
     //sets data attribute data-song-number = to currentlyPlayingSong and places it a new var currentlyPlayingSongElement
-    var currentlyPlayingSongElement = document.querySelecetor('[data-song-number="' + currentlyPlayingSong + '"]');
+    var currentlyPlayingSongElement = document.querySelector('[data-song-number="' + currentlyPlayingSong + '"]');
     //set currentlyPlayingSongElement's innerHTML to whatever data-song-number attribute is set to
     currentlyPlayingSongElement.innerHTML = currentlyPlayingSongElement.getAttribute('data-song-number');
     //sets the innerHTML of targetElement to pauseButtonTemplate
     songItem.innerHTML = pauseButtonTemplate;
     //sets currentlyPlayingSong to whatever data-song-number is set to at targetElement
-    currentlyPlayingSong = songItem.getAttribute('data-song-number';)
+    currentlyPlayingSong = songItem.getAttribute('data-song-number');
   }
 
 };
