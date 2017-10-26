@@ -125,7 +125,12 @@ window.onload = function() {
 //change play button back to song-item-number on mouseleave
   for (var i = 0; i < songRows.length; i++) {
     songRows[i].addEventListener('mouseleave', function(event) {
+      //Selects first child element, which is the song-item-number element
       this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
+    });
+
+    songRows[i].addEventListener('click', function(event) {
+      //Event handler call
     });
   }
 
