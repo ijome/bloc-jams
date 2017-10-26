@@ -154,7 +154,7 @@ window.onload = function() {
     });
 
     songRows[i].addEventListener('click', function(event) {
-      //Event handler call
+      clickHandler(event.target);
     });
   }
 
