@@ -143,7 +143,11 @@ window.onload = function() {
 //change song-item-number into a play button on mouseover
   songListContainer.addEventListener('mouseover', function(event) {
     if (event.target.parentElement.className === 'album-view-song-item') {
-      event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
+      var songItem = getSongItem(event.target);
+
+      if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
+        songItem.innerHTML = playButtonTemplate;
+      }
     }
   });
 //change play button back to song-item-number on mouseleave
