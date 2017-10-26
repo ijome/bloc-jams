@@ -102,7 +102,17 @@ var getSongItem = function(element) {
     default:
       return;
   }
-}
+};
+
+var clickHandler = function (targetElement) {
+
+  var songItem = getSongItem(targetElement);
+
+  if (currentlyPlayingSong === null) {
+    songItem.innerHTML = pauseButtonTemplate;
+    currentlyPlayingSong = songItem.getAttribute('data-song-number');
+  }
+};
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 var songRows = document.getElementsByClassName('album-view-song-item');
