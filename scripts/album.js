@@ -55,7 +55,7 @@ var createSongRow = function(songNumber, songName, songLength) {
 
   return template;
 };
-// capture variables
+// global capture variables
 var albumTitle = document.getElementsByClassName('album-view-title')[0];
 var albumArtist = document.getElementsByClassName('album-view-artist')[0];
 var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
@@ -83,6 +83,11 @@ var findParentByClassName = function(element, targetClass) {
       currentParent = currentParent.parentElement;
     }
     return currentParent;
+  }
+    if (currentParent.className !== targetClass) {
+    console.log("No parent found with that class name");
+  } else if (currentParent === null) {
+    console.log("No parent found");
   }
 };
 //Accepts an element and returns that element w/ .song-item-number class
