@@ -5,7 +5,7 @@
   right: 0;
   height: 200px;
   background-color: rgba(255, 255, 255, 0.3);
-  z-inder: 100;
+  z-index: 100;
 }
 
 .player-bar a {
@@ -29,7 +29,7 @@
 
 .player-bar .control-group {
   display: table-cell;
-  vertical-align: center;
+  vertical-align: middle;
 }
 
 .player-bar .main-controls {
@@ -104,7 +104,7 @@
 .seek-bar .fill {
   background-color: white;
   width: 36%;
-  height: 0.25;
+  height: 0.25rem;
   border-radius: 2px;
 }
 
