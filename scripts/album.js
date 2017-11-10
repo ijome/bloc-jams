@@ -53,21 +53,21 @@ var createSongRow = function(songNumber, songName, songLength) {
   + '</tr>'
   ;
 
-  return template;
+  return $(template);
 };
 // global capture variables
-var albumTitle = document.getElementsByClassName('album-view-title')[0];
-var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-var albumImage = document.getElementsByClassName('album-cover-art')[0];
-var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+var $albumTitle = $('.album-view-title');
+var $albumArtist = $('.album-view-artist');
+var $albumReleaseInfo = $('.album-view-release-info');
+var $albumImage = $('.album-cover-art');
+var $albumSongList = $('.album-view-song-list');
 // when called, sets current album view and with all of the relevant elements: album title, artist, release year, label, album art, and song list
 var setCurrentAlbum = function(album) {
 
-  albumTitle.firstChild.nodeValue = album.title;
-  albumArtist.firstChild.nodeValue = album.artist;
-  albumReleaseInfo.firstChild.nodeVaule = album.year + ' ' + album.label;
-  albumImage.setAttribute('src', album.albumArtUrl);
+  $albumTitle.text(album.title);
+  $albumArtist.text(album.artist);
+  $albumReleaseInfo.text(album.year + ' ' + album.label);
+  $albumImage.attr('src', album.albumArtUrl);
 
   albumSongList.innerHTML = '';
 
